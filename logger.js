@@ -24,6 +24,7 @@ class Logger {
     error(message) {
         let date = new Date();
         let error = `${date.toUTCString()}: ERROR ${message} \n`;
+        let name = this.createFileName('error');
         this.appendFile(`${this.logDirectory}/${name}`, error);
         return error;
     }
